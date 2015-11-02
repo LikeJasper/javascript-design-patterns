@@ -103,10 +103,14 @@ function Car (model, year) {
 var civic = new Car("Honda Civic", 2009);
 var mondeo = new Car("Ford Mondeo", 2010);
 
-// Constructors with prototypes: Functions, like almost all objects in 
-// JavaScript, contain a "prototype" object. When we call a JavaScript 
-// constructor to create an object, all the properties of the constructor's 
-// prototype are then made available to the new object.
+////////////////////////////////////////////////////////////////////////////////
+
+// 3. CONSTRUCTORS WITH PROTOTYPES
+
+// Functions, like almost all objects in JavaScript, contain a "prototype" 
+// object. When we call a JavaScript constructor to create an object, all the 
+// properties of the constructor's prototype are then made available to the new 
+// object.
 
 function ProtoCar (model, year) {
   this.model = model
@@ -117,7 +121,7 @@ ProtoCar.prototype.toString = function () { // This function is the same for all
     return this.model + " was made in " + this.year;
 }
 
+// merc and bentley share a single instance of toString()
+
 var merc = new ProtoCar("Mercedes Benz", 2005);
 var bentley = new ProtoCar("Bentley", 1950);
-
-// merc and bentley share a single instance of toString()
