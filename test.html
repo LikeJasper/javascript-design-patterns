@@ -5,14 +5,22 @@
   <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 
+  <!-- Patterns -->
   <script type="text/javascript" charset="utf-8" src="constructor.js"></script>
   <script type="text/javascript" charset="utf-8" src="module.js"></script>
   <script type="text/javascript" charset="utf-8" src="revealing-module.js"></script>
   <script type="text/javascript" charset="utf-8" src="singleton.js"></script>
+  <script type="text/javascript" charset="utf-8" src="observer.js"></script>
 </head>
 <body>
   <h1>Testing JavaScript Design Patterns</h1>
   <p>Alt + Cmd + J to open the console (in Chrome at least).</p>
   <div class="container"></div>
+  <div id="observer">
+    <h2>Observer pattern</h2>
+    <button id="addNewObserver">Add new Observer checkbox</button>
+    <input id="mainCheckbox" type="checkbox">
+    <div id="observersContainer"></div>
+  </div>
 </body>
 </html>
