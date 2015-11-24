@@ -4,6 +4,75 @@
   <title>Testing JavaScript Design Patterns</title>
   <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+</head>
+<body>
+  <h1>Testing JavaScript Design Patterns</h1>
+  <p>Alt + Cmd + J to open the console (in Chrome at least).</p>
+  <div class="container"></div>
+  <hr>
+  <div id="observer">
+    <h2>Observer pattern</h2>
+    <button id="addNewObserver">Add new Observer checkbox</button>
+    <input id="mainCheckbox" type="checkbox">
+    <div id="observersContainer"></div>
+  </div>
+  <hr>
+  <div id="jquery-pubsub">
+    <script id="userTemplate" type="text/html">
+      <li><%= name %></li>
+    </script>
+    <script id="ratingsTemplate" type="text/html">
+      <li><strong><%= title %></strong> was rated <%= rating %>/5</li>
+    </script>
+
+    <div class="sample-form">
+      <p>
+        <label for="twitter-handle">Twitter handle</label>
+        <input type="text" name="twitter-handle">
+      </p>
+      <p>
+        <label for="movie-seen">Name a movie you've seen</label>
+        <input type="text" name="movie-seen">
+      </p>
+      <p>
+        <label for="movie-rating">Rate the movie you saw</label>
+        <select name="movie-rating">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5" selected>5</option>
+        </select>
+      </p>
+      <p>
+        <button id="add">Submit rating</button>
+      </p>
+    </div>
+    <div class="summary-table">
+      <div id="users">
+        <h3>Recent users</h3>
+      </div>
+    </div>
+      <div id="ratings">
+        <h3>Recent movies rated</h3>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div id="ajax-jquery-pubsub">
+    <form id="flickrSearch">
+      <input type="text" name="tag" id="query">
+      <input type="submit" name="submit" value="submit">
+    </form>
+    <div id="lastQuery"></div>
+    <ol id="searchResults"></ol>
+    <script id="resultTemplate" type="text/html">
+      <% _.each(items, function (item){ %>
+        <li><img src="<%= item.media.m %>"></li>
+      <% }); %>
+    </script>
+  </div>
+
 
   <!-- Patterns -->
   <script type="text/javascript" charset="utf-8" src="constructor.js"></script>
@@ -11,16 +80,5 @@
   <script type="text/javascript" charset="utf-8" src="revealing-module.js"></script>
   <script type="text/javascript" charset="utf-8" src="singleton.js"></script>
   <script type="text/javascript" charset="utf-8" src="observer.js"></script>
-</head>
-<body>
-  <h1>Testing JavaScript Design Patterns</h1>
-  <p>Alt + Cmd + J to open the console (in Chrome at least).</p>
-  <div class="container"></div>
-  <div id="observer">
-    <h2>Observer pattern</h2>
-    <button id="addNewObserver">Add new Observer checkbox</button>
-    <input id="mainCheckbox" type="checkbox">
-    <div id="observersContainer"></div>
-  </div>
 </body>
 </html>
