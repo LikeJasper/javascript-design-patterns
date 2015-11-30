@@ -83,6 +83,36 @@
       </span>
     </div>
   </div>
+  <hr>
+  <div id="mvvm-1">
+    <p><input id="source" data-bind="value: contactName, valueUpdate: 'keyup'"></p>
+    <div data-bind="visible: contactName().length > 10">
+      You have a really long name!
+    </div>
+    <p>Contact name: <strong data-bind="text: contactName"></strong></p>
+  </div>
+  <div id="mvvm-2">
+    <header>
+      <h1>Todos</h1>
+      <input id="new-todo" type="text" data-bind="value: current, valueUpdate: 'afterkeydown', enterKey: add" placeholder="What needs to be done?">
+    </header>
+    <section id="mvvm-2-main" data-bind="block: todos().length">
+      <input id="toggle-all" type="checkbox" data-bind="checked: allCompleted">
+      <label for="toggle-all">Mark all as complete</label>
+
+      <ul id="todo-list" data-bind="foreach: todos">
+        <!-- item -->
+        <li data-bind="css: {done: done, editing: editing}">
+          <div class="view" data-bind="event: {dblclick: $root.editItem}">
+            <input class="toggle" type="checkbox" data-bind="checked: done">
+            <label data-bind="text: content"></label>
+            <a class="destroy" href="#" data-bind="click: $root.remove"></a>
+          </div>
+          <input class="edit" type="text" data-bind="value: content, valueUpdate: 'afterkeydown', enterKey: $root.stopEditing, selectAndFocus: editing, event: {blur: $root.stopEditing}">
+        </li>
+      </ul>
+    </section>
+  </div>
 
 
   <!-- Patterns -->
@@ -100,5 +130,7 @@
   <script type="text/javascript" charset="utf-8" src="decorator.js"></script>
   <script type="text/javascript" charset="utf-8" src="flyweight.js"></script>
   <script type="text/javascript" charset="utf-8" src="mvc.js"></script>
+  <script type="text/javascript" charset="utf-8" src="mvp.js"></script>
+  <script type="text/javascript" charset="utf-8" src="mvvm.js"></script>
 </body>
 </html>
