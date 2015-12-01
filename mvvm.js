@@ -57,5 +57,12 @@ ko.applyBindings(aViewModel);
 
 // View: See test.html
 
+////////////////////////////////////////////////////////////////////////////////
+
+// 2. ViewModels
+
+// The ViewModel can be considered a specialized Controller that acts as a
+// data converter. It changes Model information into View information, passing
+// commands from the View to the Model.
 
 
